@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Events: Task 1</title>
+    <link rel="stylesheet" href="Loop/styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+
+
+    </section>
+
+    <button class="off">Machine is off</button>
+
+    <textarea class="playable playable-js" style="height: 220px;">
+
+const btn = document.querySelector('.off');
+
+// Add your code here
+btn.addEventListener("click", ()=>{
+    if(btn.className == "off"){
+        btn.textcontent = "Machine is on";
+        btn.className = "on";
+    }else{
+        btn.textcontent = "Machine is off";
+        btn.className = "off";
+    }
+})
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script class="editable"></script>
+  <script src="functions/playable.js"></script>
+</html>

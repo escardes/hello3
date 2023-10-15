@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Draw in gradient</title>
+    </head>
+    <body>
+        <h1>HTML5 Canvas</h1>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid grey;"></canvas><br>
+
+        <canvas id="myCanvas1" width="200" height="100" style="border:1px solid grey;"></canvas>
+        <script>
+            const c = document.getElementById("myCanvas");
+            const ctx = c.getContext("2d");
+            // Create gradient
+            const grd = ctx.createLinearGradient(0,0,200,0);
+            grd.addColorStop(0,"red");
+            grd.addColorStop(1,"white");
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(10,10,150,80);
+        
+            //Second Gradient drawn
+            const c1 = document.getElementById("myCanvas1");
+            const ctx1 = c1.getContext("2d");
+
+            // Create gradient
+            const grd1 = ctx1.createRadialGradient(75,50,5,90,60,100);
+            grd1.addColorStop(0,"red");
+            grd1.addColorStop(1,"white");
+
+           // Fill with gradient
+           ctx1.fillStyle = grd1;
+           ctx1.fillRect(10,10,150,80);
+        </script>
+    </body>
+</html>

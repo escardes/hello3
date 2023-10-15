@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Drawing with  Canvas!</title>
+        <style>
+            #myCanvas{
+                border: 1px solid black;
+                width: 100%;
+                top: 10%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML5 Canvas</h1>
+        <h2>The arc() Method</h2>
+        <button id="Addbtn">Add Circles</button>
+        <button id="removebtn">Remove Circles</button>
+        <canvas id="myCanvas" width="200" height="120">
+        </canvas>
+        <script>
+            //introduce a button to add more arc on our picture
+            const btn =document.querySelector("#Addbtn");
+            const removebtn = document.querySelector("#removebtn");
+            //function to draw more circle
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            btn.addEventListener("click", ()=>{
+                ctx.beginPath();
+                ctx.arc(Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*50),0,2*Math.PI);
+                ctx.stroke()
+            });
+            removebtn.removeEventListener(btn);
+            /*const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*50),0,2*Math.PI);
+            ctx.stroke();*/
+        </script> 
+    </body>
+</html>

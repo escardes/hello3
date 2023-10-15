@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculate</title>
+        <style>
+            .main {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100px;
+                height: 200px;
+                border: 1px double black;
+            }
+            td{
+                border: 1px solid black ;
+                padding: 3px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="calculate">Calculate</button>
+        <button id="clear">Clear</button>
+        <pre id="results"></pre>
+
+        <table class="main" >
+            <tbody class="mb">
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>*</td>
+                    <td>+</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>/</td>
+                    <td>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            const results = document.querySelector("#results");
+            function calculate() {
+                for (let i = 1; i < 10; i++) {
+                    const newResult = `${i} x ${i} = ${i * i}`;
+                    results.textContent += `${newResult}\n`;
+                }
+                results.textContent += "\nFinished!";
+            }
+            const calculateBtn = document.querySelector("#calculate");
+            const clearBtn = document.querySelector("#clear");
+            calculateBtn.addEventListener("click", calculate);
+            clearBtn.addEventListener("click", () => (results.textContent = ""));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Draw</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #pt{
+                width: 350px;
+                height: 350px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Image to draw in the canvas:</p>
+        <p><img id="pt" src="photos/huguette.jpg"  alt="Fashion Picture"></p>
+        <p><button id = "btn" onclick="draw()">Click to see Image</button></p>
+        <p><canvas id="dr" width="400" height="400" style="border: 1px solid black;"></canvas></p>
+        <script>
+            function draw(){
+                const canvas = document.getElementById("dr");
+                const ctx = canvas.getContext("2d");
+                const img = document.getElementById("pt");
+                ctx.drawImage(img, 10, 10, 390,390);
+            }
+        </script>
+    </body>
+</html>

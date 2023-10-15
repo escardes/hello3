@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <script>
+      // run this function when the document is loaded
+      window.onload = () => {
+        // create a couple of elements in an otherwise empty HTML page
+        const heading = document.createElement("h1");
+        const headingText = document.createTextNode("Big Head!");
+        heading.setAttribute("id", "h1Attr");
+        heading.appendChild(headingText);
+        document.body.appendChild(heading);
+      };
+      window.onclick = ()=>{
+        const button = document.createElement("button");
+        const buttonTextNode = document.createTextNode("Click Here");
+        button.appendChild(buttonTextNode);
+        document.body.appendChild(button);
+        button.addEventListener("click",()=>{
+            prompt("What is your name,sir?");
+        });
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
